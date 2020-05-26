@@ -1,21 +1,24 @@
 from django.shortcuts import render, get_object_or_404
 from django.http  import HttpResponse
-import datetime as dt
-from .models import Galleryimage
+from .models import Galleryimage, Category
 
 # Create your views here.
 def home(request):
     images = Galleryimage.objects
-    date = dt.datetime.today()
-    return render(request, 'home.html', {"date":date}, {"images":images})
+    return render(request, 'home.html', {"images":images})
 
-def search_result(request):
-    if 'image' in request.GET and request.GET['image']:
-        search_category = request.GET.get("image")
-        searched_results = Image.search_by_category(search_category)
-        message = f"{search_by_category}"
+def details(request, image_id):
+    gallery = get_object_or_404(Galleryimage, pk=image_id)
+    return render(request, 'details.html', {"gallery":gallery})
 
-        return render(request, 'search.html', {"message":message, "images":searched_results})
+def search_results(request):
+    if 'image' in request.GET and request.GET["image"]:
+        search_term = request.GET.get("image")
+        searched_images = Category.search_by_title(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'details.html',{"message":message,"images": searched_images})
+
     else:
-        message = 'I don\'t think you\'ve searched by category'
-        return render(request, 'search.html', {"message":message})
+        message = "You haven't searched for any term"
+        return render(request, 'details.html',{"message":message})
