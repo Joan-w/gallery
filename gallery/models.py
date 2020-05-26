@@ -1,4 +1,5 @@
 from django.db import models
+import datetime as dt
 
 # Create your models here.
 class ImageCategory(models.Model):
@@ -40,7 +41,7 @@ class Galleryimage(models.Model):
     image = models.ImageField(upload_to='images/')
     title = models.CharField(max_length=80)
     summary = models.CharField(max_length=160)
-    location = models.ForeignKey(Locattion, on_delete=models.PROTECT)
+    location = models.ForeignKey(Location, on_delete=models.PROTECT)
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
