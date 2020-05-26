@@ -6,7 +6,8 @@ from .models import Galleryimage
 # Create your views here.
 def home(request):
     images = Galleryimage.objects
-    return render(request, 'home.html', {"images":images})
+    date = dt.datetime.today()
+    return render(request, 'home.html', {"date":date}, {"images":images})
 
 def search_result(request):
     if 'image' in request.GET and request.GET['image']:
