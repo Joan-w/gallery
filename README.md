@@ -1,5 +1,7 @@
 # PROJECT
 ### Pics-World Album
+![Screenshot from 2020-05-27 13-29-13](https://user-images.githubusercontent.com/58691817/83008899-98213e80-a01e-11ea-9ef4-7a2fdc1a681f.png)
+
 
 ## AUTHOR
 ### Joan Kinyua
@@ -10,7 +12,7 @@ The photo details must appear on a modal within the same route as the main page.
 of photos. (ie. HIking, code) Copy a link to the photo to share with your friends.
 
 ## SetUp / Installation Requirements
-* Clone the repo by running: ```
+* Clone the repo by running: ```https://github.com/Joan-w/gallery.git```
 * Navigate to the project directory;
 * cd Gallery-Photo
 * Create a virtual environment and activate it python3 -m venv virtual . virtual/bin/activate
