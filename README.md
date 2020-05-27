@@ -12,7 +12,7 @@ The photo details must appear on a modal within the same route as the main page.
 of photos. (ie. HIking, code) Copy a link to the photo to share with your friends.
 
 ## SetUp / Installation Requirements
-* Clone the repo by running: ```https://github.com/Joan-w/gallery.git```
+* Clone the repo by running: ```git clone https://github.com/Joan-w/gallery.git```
 * Navigate to the project directory;
 * cd Gallery-Photo
 * Create a virtual environment and activate it python3 -m venv virtual . virtual/bin/activate
